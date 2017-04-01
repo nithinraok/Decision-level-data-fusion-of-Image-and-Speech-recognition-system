@@ -1,0 +1,190 @@
+\documentclass[ignorenonframetext]{beamer}
+
+
+\mode<all> {
+
+\usetheme{Rochester} 
+\usecolortheme{beaver}
+ 
+\usepackage{marvosym} % Please comment this out, as I had used it for getting that smiley! :)
+
+\useinnertheme[shadow=true]{rounded}
+\useoutertheme{infolines}
+
+\setbeamertemplate{headline}
+{
+  \leavevmode%
+  \hbox{%
+
+  \begin{beamercolorbox}[wd=1\paperwidth,ht=15ex,dp=1ex,left,leftskip=1em]{subsection in head/foot}%
+    \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
+  \end{beamercolorbox}
+}%
+  \vskip0pt%
+}
+
+\setbeamercovered{transparent}
+}
+
+\makeatother
+
+
+%If you want to see the navigation symbols comment out the next line.
+\setbeamertemplate{navigation symbols}{}
+%\setbeamertemplate{footline}{\hfill\insertframenumber~\vrule~\inserttotalframenumber}
+
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+%\usepackage{helvet}
+\usepackage[T1]{fontenc}
+% \usefonttheme[onlymath]{serif}
+%\usefonttheme{serif}
+\usepackage{caption}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+
+
+
+
+
+\title[Major Project]{Decision level data fusion in Speech and Image Recognition Systems }
+\author[]{Gaurav Sanjay Newalkar (12EC43),\\ Nithin Rao Koluguri(12EC51), \\Nikhil Lunavath(12EC68) \\~\\{ Project Guide: Dr.Ashvini Chaturvedi \\ Dept of E \& C Engg}}
+\institute[]{\begin{minipage}[b]{0.35\linewidth}
+\centering{\includegraphics[scale=0.3]{./nitk}
+}
+\end{minipage}}
+\date[\today]{Jan - May 2016}
+
+\let\otp\titlepage
+\renewcommand{\titlepage}{\otp\addtocounter{framenumber}{-1}}
+
+\begin{document}
+
+{
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+}
+\addtobeamertemplate{frametitle}{}{%
+\begin{tikzpicture}[remember picture,overlay]
+\node[anchor=north east,yshift=2pt] at (current page.north east) {\includegraphics[height=0.8cm]{cat}};
+\end{tikzpicture}}
+
+
+\begin{frame}{Objectives}
+\begin{itemize}
+\item To recognize 4 different words through automatic speech recognition.
+\item BASED ON THE RECOGNIZED WORD, A IMAGE RECOGNITION SYSTEM TO BE DEVELOPED TO RECOGNIZE THE OBJECT PERTAINING TO THE COMMAND GIVEN.
+\end{itemize}
+ \end{frame}
+
+
+\begin{frame}{Confusion Matrix}
+\begin{itemize}
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.55]{matrix.JPG}
+\end{figure}
+\item We have achieved a total of 98.33 percentage accuracy on training data and 92.5 percentage accuracy on test data samples.\\
+Edit: We changed the test data with different speakers.
+
+\end{itemize}
+ \end{frame}
+ 
+\begin{frame}{Objective 2- Approaches}
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.30]{figure1.png}
+\caption{Basic model of speech recognition \label{Basic model of speech recognition}}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Feature Extraction}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.30]{figure4.png}
+\caption{Steps followed for feature extraction \label{Steps followed for feature extraction}}
+\end{figure}
+
+ \end{frame}
+
+\begin{frame} {A Close look at MFCCs extraction}
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.30]{frameblocking.png}
+\caption{ Frame Blocking[VoiceBox]  \label{Frame Blocking}}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}{Pattern Recognition Model}
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.30]{figure1.png}
+\caption{Basic model of speech recognition \label{Basic model of speech recognition}}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Feature Classification}
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.25]{figure3.png}
+\caption{Classification using HMM \label{Classification using HMM}}
+\end{figure}
+ \end{frame}
+
+\begin{frame}{Results}
+\begin{itemize}
+
+\item  For each word we have taken 20 male voice samples and 20 female voice samples.So a total of 4*(20+20)=160 samples have been collected.
+\item  Out of 160 samples two third of them i.e., 120 samples are given for training and the remaining 40 samples for testing.
+
+\end{itemize}
+ \end{frame}
+
+\begin{frame}
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.40]{melfreq.png}
+\caption{ MFCC for Word : "Two"  \label{ Process }}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\begin{figure}[ht!]
+\centering
+\includegraphics[scale=0.50]{spectrogram.png}
+\caption{Spectrogram of Word: "Two"  \label{Feature Extraction }}
+\end{figure}
+\end{frame}
+
+
+
+
+\begin{frame}{References}
+
+
+\bibitem{latexGuide}S.M. Peeling, R.K. Moore,
+\emph{" Isolated digit recognition experiments using the multi-layer perceptron",}1987
+
+
+\bibitem{latexGuide}Bernhard R. Kammerer, Wolfgang A. Kuapper  
+\emph{"Experiments for isolated-word recognition with single- and two-layer perceptrons",} 1988
+
+\bibitem{latexGuide}Burr, D.J., 
+\emph{""Experiments on neural net recognition of spoken and written text",} IEEE Transactions on , vol.36, no.7, pp.1162-1168, Jul 1988.
+
+\bibitem{latexGuide} . M.A.Anusuya ,S.K.Katti ,
+\emph{"Speech recognition by machine: A review",} in Proceedings of the IEEE , vol.64, no.4, pp.501-531, April 2009.
+
+
+
+
+\end{frame}
+
+\end{document}
+

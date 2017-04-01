@@ -1,0 +1,3 @@
+1.The essential thought behind the Histogram of Oriented Gradient descriptors is that local 
+object appearance and shape within an image can be described by the distribution of 
+intensity gradients or edge directions
